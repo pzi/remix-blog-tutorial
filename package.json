@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "prisma generate",
     "build": "remix build",
-    "build:prisma": "prisma generate && prisma db push && prisma db seed && npm run build build",
+    "build:prisma": "prisma generate && prisma db push && prisma db seed && npm run build",
     "dev": "remix dev -c \"npm run dev:serve\"",
     "dev:serve": "binode --require ./mocks -- @remix-run/serve:remix-serve ./build",
     "format": "prettier --write .",
