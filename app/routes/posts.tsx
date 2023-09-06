@@ -1,16 +1,21 @@
-import { Outlet, isRouteErrorResponse, useParams, useRouteError } from "@remix-run/react";
+import {
+  Outlet,
+  isRouteErrorResponse,
+  useParams,
+  useRouteError,
+} from "@remix-run/react";
 
 export default function PostsRoute() {
-  return <Outlet />
+  return <Outlet />;
 }
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  const params = useParams()
+  const params = useParams();
 
   // when true, this is what used to go to `CatchBoundary`
   if (isRouteErrorResponse(error)) {
-    console.log(error)
+    console.log(error);
     return (
       <div>
         <h1>Uh oh! The post with the slug "{params.slug}" does not exist!</h1>

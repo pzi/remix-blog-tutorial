@@ -5,7 +5,7 @@ import { getPostListings } from "./post.server";
 import { requireAdminUser } from "~/session.server";
 
 export const loader = async ({ request }: LoaderArgs) => {
-  await requireAdminUser(request)
+  await requireAdminUser(request);
   return json({ posts: await getPostListings() });
 };
 
@@ -14,9 +14,7 @@ export default function PostAdmin() {
 
   return (
     <div className="mx-auto max-w-4xl">
-      <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">
-        Blog Admin
-      </h1>
+      <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">Blog Admin</h1>
       <div className="grid grid-cols-4 gap-6">
         <nav className="col-span-4 md:col-span-1">
           <ul>
@@ -32,7 +30,7 @@ export default function PostAdmin() {
               </li>
             ))}
           </ul>
-          <p className='mt-8'>
+          <p className="mt-8">
             <Link to="/posts" className="text-blue-600">
               👈🏼 <span className="underline">Back to all posts</span>
             </Link>

@@ -15,7 +15,7 @@ import { getEnv } from "./env.server";
 
 const ABORT_DELAY = 5_000;
 
-global.ENV = getEnv()
+global.ENV = getEnv();
 
 export default function handleRequest(
   request: Request,

@@ -2,10 +2,10 @@ import type { LoaderArgs } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { requireAdminUser } from "~/session.server";
 
-export const loader = async ({request}: LoaderArgs) => {
-  await requireAdminUser(request)
-  return null
-}
+export const loader = async ({ request }: LoaderArgs) => {
+  await requireAdminUser(request);
+  return null;
+};
 
 export default function AdminIndexRoute() {
   return (

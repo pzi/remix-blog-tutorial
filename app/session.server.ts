@@ -64,13 +64,13 @@ export async function requireUser(request: Request) {
 }
 
 export async function requireAdminUser(request: Request) {
-  const user = await requireUser(request)
+  const user = await requireUser(request);
 
   if (user.email !== ENV.ADMIN_EMAIL) {
-    throw await logout(request)
+    throw await logout(request);
   }
 
-  return user
+  return user;
 }
 
 export async function createUserSession({

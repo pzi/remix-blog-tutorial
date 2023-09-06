@@ -28,7 +28,7 @@ export const loader = async ({ request }: LoaderArgs) => {
 };
 
 export default function App() {
-  const data = useLoaderData<typeof loader>()
+  const data = useLoaderData<typeof loader>();
 
   return (
     <html lang="en" className="h-full">
@@ -41,7 +41,11 @@ export default function App() {
       <body className="h-full">
         <Outlet />
         <ScrollRestoration />
-        <script dangerouslySetInnerHTML={{ __html: `window.ENV=${JSON.stringify(data.ENV)}` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV=${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
